@@ -333,8 +333,8 @@ class TaskReviewView(View):
         try:
             developer = await bot.fetch_user(int(self.assignee_id))
             embed = Embed(
-                title="✅ Задача принята",
-                description=f"Ваша задача **{self.task_name}** была принята!",
+                title="Задача принята",
+                description=f"Ваша задача **{self.task_name}** была принята",
                 color=0x00ff00
             )
             embed.add_field(name="ID задачи", value=self.task_id, inline=True)
@@ -345,7 +345,7 @@ class TaskReviewView(View):
 
         try:
             await interaction.response.send_message(
-                f"Задача **{self.task_name}** принята! Разработчик уведомлён.",
+                f"Задача **{self.task_name}** принята. Разработчик уведомлён.",
                 ephemeral=True
             )
         except discord.errors.NotFound:
@@ -390,7 +390,7 @@ class TaskRejectionModal(Modal, title="Отклонение задачи"):
         try:
             developer = await bot.fetch_user(int(self.assignee_id))
             embed = Embed(
-                title="❌ Задача отклонена",
+                title="Задача отклонена",
                 description=f"Ваша задача **{self.task_name}** отклонена и требует доработки.",
                 color=0xff0000
             )
@@ -1043,7 +1043,7 @@ async def on_message(message):
             del pending_completions[ref_message_id]
 
             await message.channel.send(
-                f"{message.author.mention}, задача **{pending['task_name']}** отправлена на проверку!",
+                f"{message.author.mention}, задача **{pending['task_name']}** отправлена на проверку.",
                 delete_after=5
             )
 
