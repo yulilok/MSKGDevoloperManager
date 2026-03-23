@@ -1,4 +1,4 @@
-# MSKG Developer Manager Bot
+# Developer Manager Bot
 
 Discord-бот для управления задачами разработчиков с интеграцией Google Таблиц. Предназначен для организации процесса разработки в команде.
 
